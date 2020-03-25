@@ -15,7 +15,7 @@ import java.util.Properties;
 public class Utils {
     public static RequestSpecification request;
 
-    public RequestSpecification RequestSpecification() throws IOException {
+    public RequestSpecification requestSpecification() throws IOException {
 
         if (request == null) {
             PrintStream log = new PrintStream(new FileOutputStream("log.txt"));
@@ -42,6 +42,5 @@ public class Utils {
         String resp = response.asString();
         JsonPath jp = new JsonPath(resp);
         return jp.get(key).toString();
-
     }
 }
